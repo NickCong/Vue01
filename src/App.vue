@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <img class="logo" src="./assets/logo.png">
+    <h1 class='site-title' > {{ sitetitle }} </h1>
+    <div style="clear:both"></div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-
 export default {
   name: 'app',
-  components: {
-    Hello
+  data: function () {
+   return {
+      sitetitle:'博客园'
+   }
   }
 }
 </script>
@@ -21,8 +23,19 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding:20px;
+  margin-left:100px;
+  margin-right:100px;
+}
+.logo{
+width:100px;
+height:100px;
+float:left;
+}
+.site-title{
+margin-left: 100px;
+float: left;
+font-size: 40px;
 }
 </style>
