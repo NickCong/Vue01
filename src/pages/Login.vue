@@ -2,33 +2,52 @@
   <div id="login">
   <div>
   <lable> <i class="fa fa-user-circle fa-2x"></i></lable>
-  <input placeholder='Enter an account'> </input>
+  <input placeholder='Enter an account' v-model="userAccount"></input>
   </div>
   <div>
  <lable> <i class="fa fa-key fa-2x"></i></lable>
-  <input placeholder='Enter the password'> </input>
+  <input placeholder='Enter the password' v-model="passWord"> </input>
   </div>
-     <button v-on:click='btnclick'>{{ btnname }}</button>
+  <span v-if='show'>{{errorMessage}}</span>
+     <button v-on:click='btnloginclick'>{{ btnloginname }}</button>
+     <button v-on:click='btnregisterclick'>{{ btnregistername }}</button>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'login',
   methods: {
-    btnclick: function () {
-      alert('Hello')
+    btnloginclick: function () {
+        this.show = false;
+        this.func.ajaxPost(this.api.login, {name:this.userAccount, password: this.passWord }, res => {
+            if (res.data.code === 200){
+                if(res.data.user !=null ){
+                     this.$router.push({name: 'blog'})
+                 }
+            }
+            this.show = true;
+        })
+    },
+    btnregisterclick: function (){
+        this.$router.push({name: 'register'})
     }
-  },
+   },
   data: function () {
     return {
-      btnname: 'login'
+      show:false,
+      userAccount:'',
+      passWord:'',
+      btnloginname: '登陆',
+      btnregistername: '注册',
+      errorMessage:'您输入账号和密码不对'
     }
   }
   }
 </script>
 
-<style>
+<style lang='scss' scoped>
 #login {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -36,5 +55,22 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
+  div{
+     margin-bottom:30px;
+  }
+
+  input{
+     position: relative;
+     top: -7px;
+     margin-left: 5px;
+     height: 24px;
+  }
+  button{
+     margin-right:30px;
+     height:30px;
+     width:100px;
+  }
 }
+
 </style>

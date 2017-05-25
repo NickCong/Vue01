@@ -4,6 +4,9 @@ import Hello from '../components/Hello'
 import About from '../components/About'
 import Recruit from '../components/Recruit'
 import Login from '../pages/Login'
+import Register from '../pages/Register'
+import Blog from '../pages/Blog'
+
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -26,6 +29,17 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+},
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+}
+,
+    {
+      path: '/blog',
+      name: 'blog',
+      component: Blog
 }
   ]
 })

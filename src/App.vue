@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <h1 class='site-title' > {{ sitetitle }} </h1>
+     <div id='logoandtitle'>
+         <img class="logo" src="./assets/logo.png">
+         <span class='site-title' > {{ sitetitle }} </span>
+     </div>
     <div style="clear:both"></div>
     <router-view></router-view>
   </div>
@@ -12,7 +14,7 @@ export default {
   name: 'app',
   data: function () {
    return {
-      sitetitle:'博客园'
+      sitetitle:'博 客 园'
    }
   }
 }
@@ -25,17 +27,21 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   padding:20px;
+  padding-top:0;
   margin-left:100px;
   margin-right:100px;
 }
+#logoandtitle{
+   text-align: center;
+}
 .logo{
-width:100px;
-height:100px;
-float:left;
+width:200px;
+height:200px;
 }
 .site-title{
 margin-left: 100px;
-float: left;
-font-size: 40px;
+font-size: 50px;
+position: absolute;
+margin-top: 50px;
 }
 </style>

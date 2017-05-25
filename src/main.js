@@ -4,6 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 Vue.config.productionTip = false
+import func from "./common/func";
+import api from "../build/server/api";
+import axios from "axios";
+
+Vue.prototype.api = api;
+Vue.prototype.func = func;
 
 /* eslint-disable no-new */
 new Vue({
