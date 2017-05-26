@@ -10,7 +10,6 @@ module.exports = {
                 if (err) {
                     console.log(err);
                 }
-
                 console.log(q.sql);
 
                 cb(rows);

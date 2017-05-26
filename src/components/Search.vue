@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'about',
+  name: 'search',
   methods: {
     btnclick: function () {
       alert('Hello')
@@ -16,7 +16,7 @@ export default {
     return {
       btnname: 'Click Me'
     }
-  }  
+  }
   }
 </script>
 

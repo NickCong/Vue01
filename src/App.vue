@@ -39,9 +39,8 @@ width:200px;
 height:200px;
 }
 .site-title{
-margin-left: 100px;
-font-size: 50px;
-position: absolute;
-margin-top: 50px;
-}
+    margin-left: 50px;
+    font-size: 50px;
+    position: relative;
+    top: -80px;}
 </style>

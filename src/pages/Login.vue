@@ -1,5 +1,5 @@
 <template>
-  <div id="login">
+  <div id="login" v-cloak v-on:click="hideErrorMessage">
   <div>
   <lable> <i class="fa fa-user-circle fa-2x"></i></lable>
   <input placeholder='Enter an account' v-model="userAccount"></input>
@@ -24,7 +24,7 @@ export default {
         this.func.ajaxPost(this.api.login, {name:this.userAccount, password: this.passWord }, res => {
             if (res.data.code === 200){
                 if(res.data.user !=null ){
-                     this.$router.push({name: 'blog'})
+                     this.$router.push({name: 'blog', params: { id:res.data.user.id}})
                  }
             }
             this.show = true;
@@ -32,6 +32,9 @@ export default {
     },
     btnregisterclick: function (){
         this.$router.push({name: 'register'})
+    },
+    hideErrorMessage: function(){
+        this.show = false;
     }
    },
   data: function () {

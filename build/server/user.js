@@ -34,6 +34,7 @@ module.exports = {
     checkByName (req, res) {
         let name = req.body.name;
        let password = req.body.password;
+       console.log('aa');
 
         executequery.connPool(sql.queryByNameAndPassword, ['user', name, password], rows => {
             rows = formatData(rows);
