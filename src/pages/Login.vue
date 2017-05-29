@@ -24,6 +24,7 @@ export default {
         this.func.ajaxPost(this.api.login, {name:this.userAccount, password: this.passWord }, res => {
             if (res.data.code === 200){
                 if(res.data.user !=null ){
+                     this.$store.commit('initBloger', res.data.user)
                      this.$router.push({name: 'blog', params: { id:res.data.user.id}})
                  }
             }

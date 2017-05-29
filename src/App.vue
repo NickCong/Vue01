@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style>
+body{
+background-color: #eff4f8;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,6 +36,8 @@ export default {
 }
 #logoandtitle{
    text-align: center;
+   background-color: #eff4f8;
+   //ackground-image:url('./assets/header01.jpg');
 }
 .logo{
 width:200px;

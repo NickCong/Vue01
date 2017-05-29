@@ -7,14 +7,18 @@ Vue.config.productionTip = false
 import func from "./common/func";
 import api from "../build/server/api";
 import axios from "axios";
+import vuex from 'vuex';
+import store from './vuex/store'
 
 Vue.prototype.api = api;
 Vue.prototype.func = func;
 
+Vue.use(vuex);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App></App>',
   components: {App}
 })

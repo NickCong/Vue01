@@ -1,19 +1,19 @@
 <template>
    <div id="register">
       <div>
-         <lable> <i class="fa fa-user-circle fa-2x"></i></lable>
+         <lable> <i class="fa fa-user-circle fa-2x fa-fw"></i></lable>
          <input placeholder='Enter an account' v-model="userAccount"></input>
       </div>
       <div>
-         <lable> <i class="fa fa-key fa-2x"></i></lable>
+         <lable> <i class="fa fa-key fa-2x fa-fw"></i></lable>
          <input placeholder='Enter the password' v-model="passWord"></input>
       </div>
       <div>
-         <lable> <i class="fa fa-compass fa-2x"></i></lable>
+         <lable> <i class="fa fa-compass fa-2x fa-fw"></i></lable>
          <input placeholder='Confirm the password' v-model="confirmPassword"></input>
       </div>
       <div>
-         <lable> <i class="fa fa-envelope-o fa-2x"></i></lable>
+         <lable> <i class="fa fa-envelope-o fa-2x fa-fw"></i></lable>
          <input placeholder='Enter the email' v-model="email"></input>
       </div>
       <div>
@@ -31,7 +31,7 @@ export default {
          this.func.ajaxPost(this.api.register, { name:this.userAccount, password:this.passWord, email:this.email } , res => {
          if (res.data.code === 200)
          {
-            this.$router.push({name: 'blog'})
+            this.$router.push({name: 'login'})
          }
          });
     },
