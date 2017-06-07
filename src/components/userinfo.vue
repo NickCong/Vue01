@@ -3,6 +3,9 @@
        <label>name:{{username}}</label>
    </div>
 </template>
+
+<script>
 export default{
-  props: {'username': string}
+  props: { username: String }
 }
+</script>
