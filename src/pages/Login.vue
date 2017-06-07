@@ -1,11 +1,11 @@
 <template>
   <div id="login" v-cloak v-on:click="hideErrorMessage">
   <div>
-  <lable> <i class="fa fa-user-circle fa-2x"></i></lable>
+  <label> <i class="fa fa-user-circle fa-2x"></i></label>
   <input placeholder='Enter an account' v-model="userAccount"></input>
   </div>
   <div>
- <lable> <i class="fa fa-key fa-2x"></i></lable>
+ <label> <i class="fa fa-key fa-2x"></i></label>
   <input placeholder='Enter the password' v-model="passWord"> </input>
   </div>
   <span v-if='show'>{{errorMessage}}</span>

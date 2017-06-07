@@ -4,6 +4,7 @@
                 <div >
                     <input v-model="search_content" ></input><i class="fa fa-search fa-x"></i>
                 </div>
+                <userinfo v-bind:username="this.$store.state.bloger.name"></userinfo>
              </div>
              <div id='right-content'>
                 <div id="main" v-cloak v-on:click="disableEdit">
@@ -19,6 +20,7 @@
          </div>
 </template>
 <script>
+import userinfo from "../components/userinfo"
 export default{
  name:'blog',
  data:function (){
@@ -28,10 +30,14 @@ export default{
         edittooltip:'Edit Blog',
         deletetooltip:'Clear Blog',
         isActive: false,
-        text_content: 'Edit me.'
+        text_content: 'Edit me.',
+        search_content:''
     }
-    },
-    methods: {
+  },
+  components: {
+    userinfo
+  },
+  methods: {
         disableEdit: function(){
             this.isActive = false;
         },
@@ -43,6 +49,7 @@ export default{
               this.text_content ='';
         }
     }
+
 }
 </script>
 
