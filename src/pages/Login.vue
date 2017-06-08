@@ -25,6 +25,8 @@ export default {
             if (res.data.code === 200){
                 if(res.data.user !=null ){
                      this.$store.commit('initBloger', res.data.user)
+                     document.cookie=`username=${res.data.user.name};`
+                     //document.cookie = `username=${res.data.user.name};userid=${res.data.user.id};useremail=${res.data.user.email};path=/${res.data.user.id}`
                      this.$router.push({name: 'blog', params: { id:res.data.user.id}})
                  }
             }
